@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kaushal Bhadreshbhai Patel | Adobe Commerce & App Builder Technical Leader</title>
+  <meta name="description" content="Technical Leader with 10+ years of experience in Adobe Commerce (Magento 2), Adobe App Builder, Serverless I/O Runtime, API Mesh, GraphQL, and Enterprise Commerce Integrations." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090d16;
+      --bg-elevated: #111827;
+      --bg-card: rgba(17, 24, 39, 0.8);
+      --border: rgba(148, 163, 184, 0.16);
+      --border-accent: rgba(56, 189, 248, 0.45);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-2: #818cf8;
+      --success: #34d399;
+      --amber: #fbbf24;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      overflow-x: hidden;
+      background-image:
+        radial-gradient(circle at 15% 15%, rgba(56, 189, 248, 0.12), transparent 35%),
+        radial-gradient(circle at 85% 10%, rgba(129, 140, 248, 0.12), transparent 35%);
+    }
+
+    .mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* Header / Nav */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(9, 13, 22, 0.84);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .brand-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 0 14px rgba(56, 189, 248, 0.7);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.35rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.68rem 1.15rem;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.88rem;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #06101d;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 25px rgba(56, 189, 248, 0.28);
+    }
+
+    .btn-outline {
+      background: rgba(15, 23, 42, 0.72);
+      color: var(--text);
+      border-color: var(--border);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--border-accent);
+      color: var(--accent);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 4.25rem 0 3.25rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.38fr 0.92fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.35rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin-bottom: 1.1rem;
+    }
+
+    h1 {
+      font-size: clamp(2.05rem, 4.3vw, 3.25rem);
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #38bdf8 0%, #818cf8 55%, #34d399 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-sub {
+      color: var(--text-muted);
+      font-size: 1rem;
+      max-width: 660px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 1.9rem;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .stat-num {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .profile-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 1.4rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+    }
+
+    .avatar-box {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border-radius: 12px;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(129, 140, 248, 0.16));
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.1rem;
+      position: relative;
+    }
+
+    .avatar-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .avatar-fallback {
+      text-align: center;
+      padding: 1.25rem;
+    }
+
+    .avatar-box img.is-loaded + .avatar-fallback {
+      display: none;
+    }
+
+    .terminal-line {
+      font-size: 0.81rem;
+      color: var(--text-muted);
+      padding: 0.35rem 0;
+      border-bottom: 1px dashed rgba(148, 163, 184, 0.12);
+      display: flex;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    .terminal-line:last-child {
+      border-bottom: none;
+    }
+
+    .terminal-line span:last-child {
+      color: var(--text);
+      font-weight: 500;
+      text-align: right;
+    }
+
+    /* Sections */
+    section {
+      padding: 3.4rem 0;
+    }
+
+    .section-header {
+      margin-bottom: 1.85rem;
+    }
+
+    .section-tag {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+
+    h2 {
+      font-size: clamp(1.5rem, 3vw, 2.15rem);
+      letter-spacing: -0.025em;
+      margin-bottom: 0.45rem;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      max-width: 720px;
+    }
+
+    /* App Builder & Latest Magento Highlights */
+    .highlights-banner {
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.12), rgba(129, 140, 248, 0.12));
+      border: 1px solid var(--border-accent);
+      border-radius: 18px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .tab-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-bottom: 1.35rem;
+    }
+
+    .tab-btn {
+      background: rgba(17, 24, 39, 0.88);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      padding: 0.5rem 0.95rem;
+      border-radius: 9px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .tab-btn.active,
+    .tab-btn:hover {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #06101d;
+      border-color: transparent;
+    }
+
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.35rem;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .card:hover {
+      border-color: var(--border-accent);
+      transform: translateY(-2px);
+    }
+
+    .pill {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+      margin-bottom: 0.65rem;
+      background: rgba(52, 211, 153, 0.12);
+      color: var(--success);
+      border: 1px solid rgba(52, 211, 153, 0.28);
+    }
+
+    .pill.blue {
+      background: rgba(56, 189, 248, 0.14);
+      color: var(--accent);
+      border-color: rgba(56, 189, 248, 0.32);
+    }
+
+    .pill.amber {
+      background: rgba(251, 191, 36, 0.14);
+      color: var(--amber);
+      border-color: rgba(251, 191, 36, 0.32);
+    }
+
+    .card h3 {
+      font-size: 1.04rem;
+      margin-bottom: 0.55rem;
+      color: var(--text);
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.75rem;
+    }
+
+    .chip {
+      font-size: 0.77rem;
+      padding: 0.28rem 0.62rem;
+      border-radius: 7px;
+      background: rgba(30, 41, 59, 0.88);
+      border: 1px solid rgba(148, 163, 184, 0.16);
+      color: #cbd5e1;
+    }
+
+    /* Projects */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .filter-btn {
+      background: rgba(17, 24, 39, 0.85);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      padding: 0.45rem 0.9rem;
+      border-radius: 8px;
+      font-size: 0.84rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      color: #06101d;
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    .project-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.55rem;
+      font-size: 0.78rem;
+      color: var(--accent);
+    }
+
+    .project-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.45rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .project-title a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.82rem;
+      white-space: nowrap;
+    }
+
+    .project-title a:hover {
+      text-decoration: underline;
+    }
+
+    .project-desc {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 0.65rem;
+    }
+
+    /* Experience & Education */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1.35fr 0.85fr;
+      gap: 1.4rem;
+      align-items: start;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 1.25rem;
+      padding-bottom: 1.3rem;
+      border-left: 1px solid rgba(56, 189, 248, 0.35);
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 5px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .period {
+      font-size: 0.78rem;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .role {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-top: 0.1rem;
+    }
+
+    .company {
+      color: #cbd5e1;
+      font-size: 0.9rem;
+    }
+
+    .location {
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin-top: 0.15rem;
+    }
+
+    /* Contact */
+    .contact-box {
+      background: linear-gradient(135deg, rgba(17, 24, 39, 0.94), rgba(15, 23, 42, 0.86));
+      border: 1px solid var(--border-accent);
+      border-radius: 20px;
+      padding: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .contact-info p {
+      color: var(--text-muted);
+      margin-top: 0.35rem;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.75rem 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 960px) {
+      .hero-grid,
+      .highlights-grid,
+      .skills-grid,
+      .projects-grid,
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="#top" class="brand">
+        <span class="brand-dot"></span>
+        <span>Kaushal Patel</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#highlights">App Builder & Latest</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn btn-primary">Hire / Connect</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="badge mono">● Adobe Commerce · App Builder · API Mesh Technical Leader</div>
+          <h1>Kaushal Bhadreshbhai Patel — <span class="gradient-text">Out-of-Process & Cloud Commerce</span></h1>
+          <p class="hero-sub">
+            Technical Leader with 10+ years of experience architecting Adobe Commerce (Magento 2) platforms, Adobe App Builder serverless solutions on I/O Runtime, API Mesh, GraphQL, and real-time ERP/CRM/PIM integrations.
+          </p>
+          <div class="hero-actions">
+            <a href="#highlights" class="btn btn-primary">App Builder & Latest Features</a>
+            <a href="#projects" class="btn btn-outline">Key Projects</a>
+            <a href="mailto:Kaushalnavapara@gmail.com" class="btn btn-outline">Kaushalnavapara@gmail.com</a>
+          </div>
+          <div class="stats">
+            <div>
+              <div class="stat-num">10+ Yrs</div>
+              <div class="stat-label">Adobe Commerce & Engineering</div>
+            </div>
+            <div>
+              <div class="stat-num">App Builder</div>
+              <div class="stat-label">Serverless & Event-Driven</div>
+            </div>
+            <div>
+              <div class="stat-num">2.4.8 / 2.4.9+</div>
+              <div class="stat-label">Modern Commerce & Cloud</div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="profile-card">
+          <div class="avatar-box">
+            <!-- Place kushalbhai-1.jpg in the same folder as index.html (or update src path) -->
+            <img
+              src="kushalbhai-1.jpg"
+              alt="Kaushal Bhadreshbhai Patel"
+              onload="this.classList.add('is-loaded')"
+              onerror="this.remove()"
+            />
+            <div class="avatar-fallback">
+              <div class="mono" style="font-size:1.55rem; font-weight:700; color:var(--accent);">KBP</div>
+              <div style="font-size:0.84rem; color:var(--text-muted); margin-top:0.25rem;">Add <code>kushalbhai-1.jpg</code> in site folder to display photo</div>
+            </div>
+          </div>
+          <div class="terminal-line mono">
+            <span>Current Role</span>
+            <span>Senior Software Developer</span>
+          </div>
+          <div class="terminal-line mono">
+            <span>Organization</span>
+            <span>Alba IT Consulting</span>
+          </div>
+          <div class="terminal-line mono">
+            <span>Extensibility</span>
+            <span>App Builder · I/O Events</span>
+          </div>
+          <div class="terminal-line mono">
+            <span>Contact</span>
+            <span>+91 99787 89339</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- App Builder & Latest Magento Highlights -->
+    <section id="highlights">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag mono">01 / App Builder & Modern Commerce Highlights</div>
+          <h2>Adobe App Builder & Latest Adobe Commerce Features</h2>
+          <p class="section-desc">Highlighting out-of-process App Builder extensibility, Adobe Commerce 2.4.8 / 2.4.9 capabilities, cloud/composable storefronts, and AI-driven discovery.</p>
+        </div>
+
+        <div class="highlights-banner">
+          <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem;">
+            <div>
+              <div class="mono" style="font-size:0.8rem; color:var(--accent); font-weight:600;">ARCHITECTURE FOCUS</div>
+              <div style="font-size:1.05rem; font-weight:700; margin-top:0.15rem;">Decoupling custom logic from core PHP upgrades via Adobe Developer App Builder, I/O Runtime actions, Events/Webhooks, and API Mesh.</div>
+            </div>
+            <div class="tab-bar" style="margin-bottom:0;" role="tablist" aria-label="Highlight categories">
+              <button class="tab-btn active" data-tab="all">All Highlights</button>
+              <button class="tab-btn" data-tab="appbuilder">App Builder & Mesh</button>
+              <button class="tab-btn" data-tab="latest">Latest Magento / Commerce</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="highlights-grid" id="highlightsGrid">
+          <!-- App Builder Cards -->
+          <article class="card highlight-item" data-group="appbuilder">
+            <span class="pill blue mono">App Builder · Serverless</span>
+            <h3>Adobe I/O Runtime & Out-of-Process Extensions</h3>
+            <p>Build decoupled serverless actions, custom middleware, and webhook handlers outside the core Commerce codebase—reducing upgrade friction and isolating heavy integration workloads.</p>
+          </article>
+
+          <article class="card highlight-item" data-group="appbuilder">
+            <span class="pill blue mono">Event-Driven · Integrations</span>
+            <h3>Adobe I/O Events, Webhooks & Journaling</h3>
+            <p>React to real-time order, inventory, customer, and catalog events to sync ERP (Microsoft Dynamics 365), CRM (Salesforce), PIM (Akeneo), or custom microservices reliably.</p>
+          </article>
+
+          <article class="card highlight-item" data-group="appbuilder">
+            <span class="pill blue mono">API Layer · Admin UI SDK</span>
+            <h3>Adobe API Mesh & Admin UI Extensibility</h3>
+            <p>Aggregate GraphQL and REST data sources behind a unified API Mesh edge while embedding custom React-based operational views inside the Commerce Admin via the Admin UI SDK.</p>
+          </article>
+
+          <!-- Latest Magento / Adobe Commerce Cards -->
+          <article class="card highlight-item" data-group="latest">
+            <span class="pill mono">2.4.9 & Modern Releases</span>
+            <h3>GraphQL, Vaulting & Performance Upgrades</h3>
+            <p>Leveraging modern Commerce releases (including 2.4.8 / 2.4.9 enhancements such as GraphQL tax-exclusive order totals, Google Pay vaulting & Real Time Account Updater in Braintree, and per-area/theme SRI hash efficiency).</p>
+          </article>
+
+          <article class="card highlight-item" data-group="latest">
+            <span class="pill amber mono">AI & Product Discovery</span>
+            <h3>AI Product Discovery & LLM Catalog Readiness</h3>
+            <p>Modern commerce experiences focus on AI-powered search, intelligent merchandising, and structured catalog exposure for AI shopping assistants and LLM discovery surfaces.</p>
+          </article>
+
+          <article class="card highlight-item" data-group="latest">
+            <span class="pill amber mono">Cloud & Composable</span>
+            <h3>Composable Storefronts & Cloud Architecture</h3>
+            <p>Combining Adobe Commerce Cloud / SaaS scalability, Edge Delivery Services (EDS) & composable storefront patterns, and App Builder for high-speed, upgrade-safe enterprise commerce.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag mono">02 / Technical Capabilities</div>
+          <h2>Professional & Technical Skills</h2>
+          <p class="section-desc">End-to-end architecture across Adobe Commerce Cloud, serverless extensibility, headless storefronts, and enterprise system integrations.</p>
+        </div>
+        <div class="skills-grid">
+          <div class="card">
+            <h3>E-Commerce Platforms & Cloud</h3>
+            <div class="chips">
+              <span class="chip">Magento 2 / Adobe Commerce (On-Prem & Cloud)</span>
+              <span class="chip">Adobe Commerce Cloud Pipeline</span>
+              <span class="chip">WordPress</span>
+              <span class="chip">Redis</span>
+              <span class="chip">Elasticsearch</span>
+              <span class="chip">Performance Tuning & Caching</span>
+              <span class="chip">CI/CD Pipelines</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Adobe App Builder & Extensibility</h3>
+            <div class="chips">
+              <span class="chip">Adobe App Builder</span>
+              <span class="chip">Adobe Developer Console</span>
+              <span class="chip">Adobe I/O Runtime</span>
+              <span class="chip">Serverless Actions</span>
+              <span class="chip">Event-Driven Architecture</span>
+              <span class="chip">Webhooks</span>
+              <span class="chip">Adobe Commerce Extensibility</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Core Magento, APIs & Frontend</h3>
+            <div class="chips">
+              <span class="chip">Adobe API Mesh</span>
+              <span class="chip">GraphQL</span>
+              <span class="chip">REST & SOAP APIs</span>
+              <span class="chip">React.js</span>
+              <span class="chip">PWA Studio</span>
+              <span class="chip">Headless Commerce</span>
+              <span class="chip">Custom Modules, Plugins & UI Components</span>
+              <span class="chip">Dependency Injection & Object Manager</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Integrations, Databases & Tools</h3>
+            <div class="chips">
+              <span class="chip">CRM: Salesforce</span>
+              <span class="chip">ERP: Microsoft Dynamics 365</span>
+              <span class="chip">PIM: Akeneo</span>
+              <span class="chip">Mailchimp & Dotdigital</span>
+              <span class="chip">PayPal, Braintree, Paytm, Amazon Pay</span>
+              <span class="chip">MySQL & PHPMyAdmin</span>
+              <span class="chip">Git, Bitbucket, Jira, Putty</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag mono">03 / Selected Work</div>
+          <h2>Key Projects & Extensions</h2>
+          <p class="section-desc">Enterprise platforms, cloud migrations, serverless integrations, and custom Adobe Commerce modules.</p>
+        </div>
+
+        <div class="filter-bar" role="tablist" aria-label="Filter projects">
+          <button class="filter-btn active" data-filter="all">All (10)</button>
+          <button class="filter-btn" data-filter="enterprise">Enterprise & Cloud</button>
+          <button class="filter-btn" data-filter="extension">Commerce Extensions</button>
+        </div>
+
+        <div class="projects-grid" id="projectsGrid">
+          <article class="card project-item" data-category="enterprise">
+            <div class="project-meta mono"><span>Senior Engineer</span><span>B2B / B2C Enterprise</span></div>
+            <div class="project-title">
+              <span>Electric-House</span>
+              <a href="https://electric-house.com" target="_blank" rel="noopener noreferrer">Visit Site ↗</a>
+            </div>
+            <p class="project-desc">Designed and developed a B2B/B2C enterprise e-commerce platform using Adobe Commerce, App Builder, API Mesh, and ReactJS PWA with cloud-native Adobe I/O Runtime extensions and real-time ERP, CRM, and PIM integrations.</p>
+            <div class="chips">
+              <span class="chip">Adobe Commerce Enterprise</span>
+              <span class="chip">App Builder</span>
+              <span class="chip">I/O Runtime</span>
+              <span class="chip">API Mesh</span>
+              <span class="chip">GraphQL</span>
+              <span class="chip">ReactJS</span>
+            </div>
+          </article>
+
+          <article class="card project-item" data-category="enterprise">
+            <div class="project-meta mono"><span>Senior Engineer</span><span>Cloud & Serverless</span></div>
+            <div class="project-title">
+              <span>KrisShop</span>
+              <a href="https://www.krisshop.com/en" target="_blank" rel="noopener noreferrer">Visit Site ↗</a>
+            </div>
+            <p class="project-desc">Enhanced performance, scalability, and cloud architecture of an Adobe Commerce Cloud platform with API-driven integrations, serverless app components, and optimized catalog and checkout workflows.</p>
+            <div class="chips">
+              <span class="chip">Adobe Commerce Cloud</span>
+              <span class="chip">App Builder</span>
+              <span class="chip">Serverless Apps</span>
+              <span class="chip">GraphQL</span>
+            </div>
+          </article>
+
+          <article class="card project-item" data-category="enterprise">
+            <div class="project-meta mono"><span>Senior Engineer</span><span>Enterprise & CRM</span></div>
+            <div class="project-title">
+              <span>Bench</span>
+              <a href="https://shop.bench.com.ph" target="_blank" rel="noopener noreferrer">Visit Site ↗</a>
+            </div>
+            <p class="project-desc">Developed custom Adobe Commerce extensions and integrated multiple CRM platforms for centralized voucher/gift card management, secure payment gateways, and platform optimization.</p>
+            <div class="chips">
+              <span class="chip">Adobe Commerce Enterprise</span>
+              <span class="chip">Custom Modules</span>
+              <span class="chip">REST APIs</span>
+              <span class="chip">CRM Integrations</span>
+            </div>
+          </article>
+
+          <article class="card project-item" data-category="enterprise">
+            <div class="project-meta mono"><span>Senior Engineer</span><span>Multi-Store Migration</span></div>
+            <div class="project-title">
+              <span>Courts MY</span>
+              <a href="https://www.courts.com.my" target="_blank" rel="noopener noreferrer">Visit Site ↗</a>
+            </div>
+            <p class="project-desc">Migrated and optimized a multi-store e-commerce platform on Adobe Commerce Cloud with REST APIs, mobile app integrations, and custom modules.</p>
+            <div class="chips">
+              <span class="chip">Adobe Commerce Cloud</span>
+              <span class="chip">REST APIs</span>
+              <span class="chip">Mobile App Integration</span>
+              <span class="chip">Cloud Architecture</span>
+            </div>
+          </article>
+
+          <article class="card project-item" data-category="extension">
+            <div class="project-meta mono"><span>Senior Engineer</span><span>Checkout Extension</span></div>
+            <div class="project-title"><span>Redeem Partial Store Credit</span></div>
+            <p class="project-desc">Built a custom extension enabling partial store credit redemption and combined payment workflows during checkout.</p>
+            <div class="chips">
+              <span class="chip">Adobe Commerce</span>
+              <span class="chip">Magento 2</span>
+              <span class="chip">PHP</span>
+              <span class="chip">Checkout Customization</span>
+            </div>
+          </article>
+
+          <article class="card project-item" data-category="extension">
+            <div class="project-meta mono"><span>Senior Engineer</span><span>Headless API Extension</span></div>
+            <div class="project-title"><span>GraphQL for Multishipping Checkout</span></div>
+            <p class="project-desc">Developed GraphQL APIs for multi-shipping checkout supporting headless frontends and multiple shipping addresses per cart.</p>
+            <div class="chips">
+              <span class="chip">Magento 2</span>
+              <span class="chip">GraphQL</span>
+              <span class="chip">Headless Commerce</span>
+              <span class="chip">PWA</span>
+            </div>
+          </article>
+
+          <article class="card project-item" data-category="extension">
+            <div class="project-meta mono"><span>Senior Engineer</span><span>Promotions Extension</span></div>
+            <div class="project-title"><span>Convert Reward Points to Coupon</span></div>
+            <p class="project-desc">Built custom cloud-compatible modules for advanced product personalization and automated promotional workflows.</p>
+            <div class="chips">
+              <span class="chip">Adobe Commerce Cloud</span>
+              <span class="chip">Custom Modules</span>
+              <span class="chip">Personalization</span>
+              <span class="chip">REST APIs</span>
+            </div>
+          </article>
+
+          <article class="card project-item" data-category="extension">
+            <div class="project-meta mono"><span>Senior Engineer</span><span>Catalog Extension</span></div>
+            <div class="project-title"><span>Product Coupon List</span></div>
+            <p class="project-desc">Developed an extension to display applicable cart price rules and coupon codes directly on product detail pages.</p>
+            <div class="chips">
+              <span class="chip">Adobe Commerce</span>
+              <span class="chip">Magento 2</span>
+              <span class="chip">PHP</span>
+              <span class="chip">Cart Price Rules</span>
+            </div>
+          </article>
+
+          <article class="card project-item" data-category="enterprise">
+            <div class="project-meta mono"><span>Junior Engineer</span><span>IT Hardware E-Commerce</span></div>
+            <div class="project-title">
+              <span>Techbuyer</span>
+              <a href="https://www.techbuyer.com" target="_blank" rel="noopener noreferrer">Visit Site ↗</a>
+            </div>
+            <p class="project-desc">Developed and maintained custom Adobe Commerce modules, REST APIs, and multi-store architecture for IT hardware e-commerce.</p>
+            <div class="chips">
+              <span class="chip">Adobe Commerce</span>
+              <span class="chip">Magento 2</span>
+              <span class="chip">REST APIs</span>
+              <span class="chip">MySQL</span>
+            </div>
+          </article>
+
+          <article class="card project-item" data-category="enterprise">
+            <div class="project-meta mono"><span>Junior Engineer</span><span>High-Traffic Fashion</span></div>
+            <div class="project-title"><span>The Closet Lover</span></div>
+            <p class="project-desc">Delivered custom integrations, loyalty program extensions, and split-shipping checkout workflows for a high-traffic fashion platform.</p>
+            <div class="chips">
+              <span class="chip">Adobe Commerce Cloud</span>
+              <span class="chip">Loyalty Program</span>
+              <span class="chip">Custom Checkout</span>
+              <span class="chip">AJAX Filters</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience & Education -->
+    <section id="experience">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag mono">04 / Career & Academics</div>
+          <h2>Experience & Education</h2>
+        </div>
+
+        <div class="two-col">
+          <div class="card">
+            <h3>Professional Experience</h3>
+            <div style="margin-top:1rem;">
+              <div class="timeline-item">
+                <div class="period mono">2023 – Present</div>
+                <div class="role">Senior Software Developer</div>
+                <div class="company">Alba IT Consulting</div>
+                <div class="location">Milton, Ontario, Canada (Remote)</div>
+              </div>
+              <div class="timeline-item">
+                <div class="period mono">2020 – 2023</div>
+                <div class="role">Senior Software Developer</div>
+                <div class="company">Ranosys Technologies</div>
+                <div class="location">World Trade Center, Kharadi, Pune, Maharashtra (Hybrid)</div>
+              </div>
+              <div class="timeline-item">
+                <div class="period mono">2019 – 2020</div>
+                <div class="role">Software Developer</div>
+                <div class="company">Stalwart Digital WebSoft Pvt Ltd</div>
+                <div class="location">Shivalik Shilp, Iskcon Cross Rd, Ahmedabad, Gujarat</div>
+              </div>
+              <div class="timeline-item">
+                <div class="period mono">2018 – 2018</div>
+                <div class="role">Software Developer</div>
+                <div class="company">Aims Infosoft</div>
+                <div class="location">Krishnanagar, Nava Naroda, Ahmedabad, Gujarat</div>
+              </div>
+              <div class="timeline-item">
+                <div class="period mono">2017 – 2018</div>
+                <div class="role">Software Developer</div>
+                <div class="company">JNext Technologies</div>
+                <div class="location">ISCON Mega City, Bhavnagar, Gujarat</div>
+              </div>
+              <div class="timeline-item">
+                <div class="period mono">2016 – 2017</div>
+                <div class="role">Software Developer</div>
+                <div class="company">Yug Infotech</div>
+                <div class="location">Apple Square, Yogi Chowk, Surat, Gujarat</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Education</h3>
+            <div style="margin-top:1rem;">
+              <div class="timeline-item">
+                <div class="period mono">2013 – 2016</div>
+                <div class="role">Bachelor of Computer Engineering</div>
+                <div class="company">Gujarat Technological University</div>
+              </div>
+              <div class="timeline-item">
+                <div class="period mono">2010 – 2013</div>
+                <div class="role">Diploma of Computer Engineering</div>
+                <div class="company">Gujarat Technological University</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <div class="contact-info">
+            <div class="section-tag mono">05 / Get In Touch</div>
+            <h2>Let's Build Scalable Commerce Solutions</h2>
+            <p>Available for senior engineering, technical leadership, Adobe App Builder architecture, and enterprise commerce consulting.</p>
+          </div>
+          <div class="contact-links">
+            <a href="mailto:Kaushalnavapara@gmail.com" class="btn btn-primary">Kaushalnavapara@gmail.com</a>
+            <a href="tel:+919978789339" class="btn btn-outline">+91 99787 89339</a>
+            <button type="button" id="copyEmailBtn" class="btn btn-outline">Copy Email</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Kaushal Bhadreshbhai Patel. Built with clean HTML, CSS & JavaScript.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // App Builder & Latest highlights tabs
+    const tabButtons = document.querySelectorAll(".tab-btn");
+    const highlightItems = document.querySelectorAll(".highlight-item");
+
+    tabButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        tabButtons.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        const group = btn.dataset.tab;
+
+        highlightItems.forEach((item) => {
+          const itemGroup = item.dataset.group;
+          item.style.display = group === "all" || group === itemGroup ? "" : "none";
+        });
+      });
+    });
+
+    // Project filtering
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const projects = document.querySelectorAll(".project-item");
+
+    filterButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        filterButtons.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        const filter = btn.dataset.filter;
+
+        projects.forEach((project) => {
+          const category = project.dataset.category;
+          const show = filter === "all" || category === filter;
+          project.style.display = show ? "" : "none";
+        });
+      });
+    });
+
+    // Copy email helper
+    const copyBtn = document.getElementById("copyEmailBtn");
+    copyBtn.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText("Kaushalnavapara@gmail.com");
+        const original = copyBtn.textContent;
+        copyBtn.textContent = "Copied!";
+        setTimeout(() => {
+          copyBtn.textContent = original;
+        }, 1800);
+      } catch (err) {
+        copyBtn.textContent = "Kaushalnavapara@gmail.com";
+      }
+    });
+  </script>
+</body>
+</html>
